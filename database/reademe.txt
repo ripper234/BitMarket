@@ -1,0 +1,4 @@
+To use:
+
+1. Create a local user called 'bmdev' with password 'bm123456'
+2. Run the batch to create schemas
