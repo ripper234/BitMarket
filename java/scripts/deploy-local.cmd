@@ -1,0 +1,1 @@
+@mvn tomcat:redeploy -P deploy-to-localhost -s settings.xml

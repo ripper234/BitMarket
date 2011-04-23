@@ -1,0 +1,1 @@
+To build a module, simple do build-module.cmd MODULE_NAME

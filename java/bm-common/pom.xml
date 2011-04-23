@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>root</artifactId>
+        <groupId>com.bitmarket</groupId>
+		<version>1.0</version>
+    </parent>
+
+    <name>BitMarket Common</name>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>bm-common</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <unitilis-version>3.1</unitilis-version>
+        <hibernate-version>3.3.2.GA</hibernate-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bitmarket</groupId>
+            <artifactId>totally-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+</project>

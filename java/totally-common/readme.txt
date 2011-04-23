@@ -1,0 +1,1 @@
+This package holds things that are "totally common" - could be used in another unrelated project.

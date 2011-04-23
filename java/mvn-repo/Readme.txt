@@ -1,0 +1,1 @@
+This folder will contain external dependencies that aren't availble in Maven repositories.

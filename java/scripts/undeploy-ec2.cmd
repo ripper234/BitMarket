@@ -1,0 +1,1 @@
+@mvn tomcat:undeploy -P deploy-to-ec2 -s settings.xml

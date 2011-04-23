@@ -1,0 +1,1 @@
+@mvn tomcat:deploy-only -P deploy-to-localhost -s settings.xml
