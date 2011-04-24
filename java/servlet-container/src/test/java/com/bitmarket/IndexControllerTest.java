@@ -9,6 +9,6 @@ public class IndexControllerTest {
     public void testHandleRequestView() throws Exception {
         IndexController controller = new IndexController();
         ModelAndView modelAndView = controller.handleRequest(null, null);
-        Assert.assertEquals("hello.jsp", modelAndView.getViewName());
+        Assert.assertEquals("index.jsp", modelAndView.getViewName());
     }
 }
