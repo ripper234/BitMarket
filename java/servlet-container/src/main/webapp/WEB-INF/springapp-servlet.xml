@@ -7,5 +7,6 @@
         http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <!-- the application context definition for the springapp DispatcherServlet -->
-    <bean name="/hello.htm" class="springapp.web.HelloController"/>
+    <bean name="/index.jsp" class="com.bitmarket.IndexController"/>
+    <bean name="/login.jsp" class="com.bitmarket.LoginController"/>
 </beans>

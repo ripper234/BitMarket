@@ -1,5 +1,5 @@
-<head><title>Hello :: Spring Application</title></head>
+<head><title>BitMarket</title></head>
 <body>
-	<h1>Hello - Spring Application</h1>
+	<h1>Welcome to BitMarket</h1>
 	<p>Greetings.</p>
 </body>
