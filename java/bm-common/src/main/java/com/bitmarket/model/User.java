@@ -1,4 +1,4 @@
-package com.mashlife.model;
+package com.bitmarket.model;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 

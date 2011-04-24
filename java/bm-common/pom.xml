@@ -5,7 +5,7 @@
     <parent>
         <artifactId>root</artifactId>
         <groupId>com.bitmarket</groupId>
-		<version>${project.version}</version>
+        <version>${project.parent.version}</version>
     </parent>
 
     <name>BitMarket Common</name>
@@ -22,7 +22,12 @@
         <dependency>
             <groupId>com.bitmarket</groupId>
             <artifactId>totally-common</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
 

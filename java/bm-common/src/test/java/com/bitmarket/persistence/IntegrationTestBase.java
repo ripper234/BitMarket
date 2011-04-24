@@ -1,16 +1,12 @@
-package com.mashlife.persistence;
+package com.bitmarket.persistence;
 
-import com.google.inject.Injector;
-import com.mashlife.MlTestBase;
+import com.bitmarket.BmTestBase;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
-public class IntegrationTestBase extends MlTestBase {
+public class IntegrationTestBase extends BmTestBase{
     @BeforeMethod
     public final void beforeIntegrationTestBase()
     {
-        final DbUtil dbUtil = getInjector().getInstance(DbUtil.class);
-        dbUtil.cleanDatabase();
+        // todo - clear database between tests
     }
 }
