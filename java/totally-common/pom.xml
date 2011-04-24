@@ -10,7 +10,6 @@
 
     <name>Totally Common</name>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>totally-common</artifactId>
     <packaging>jar</packaging>
 
@@ -81,31 +80,22 @@
             <version>0.9.26</version>
             <scope>runtime</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>log4j</groupId>-->
-            <!--<artifactId>log4j</artifactId>-->
-            <!--<version>1.2.16</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>6.0</version>
         </dependency>
-
         <dependency>
             <groupId>javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.1</version>
             <scope>runtime</scope>
         </dependency>
-
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time-hibernate</artifactId>
             <version>1.2</version>
         </dependency>
-
         <dependency>
             <groupId>com.googlecode.lambdaj</groupId>
             <artifactId>lambdaj</artifactId>
