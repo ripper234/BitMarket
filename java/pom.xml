@@ -6,8 +6,11 @@
 
     <groupId>com.bitmarket</groupId>
     <artifactId>root</artifactId>
-    <version>1.0</version>
-	<packaging>pom</packaging>
+    <version>${project.version}</version>
+    <properties>
+        <project.version>1.0-SNAPSHOT</project.version>
+    </properties>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>

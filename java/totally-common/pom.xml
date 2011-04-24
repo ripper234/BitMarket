@@ -5,7 +5,7 @@
     <parent>
         <artifactId>root</artifactId>
         <groupId>com.bitmarket</groupId>
-        <version>1.0</version>
+        <version>${project.version}</version>
     </parent>
 
     <name>Totally Common</name>

@@ -5,14 +5,14 @@
     <parent>
         <artifactId>root</artifactId>
         <groupId>com.bitmarket</groupId>
-        <version>1.0</version>
+        <version>${project.version}</version>
     </parent>
 
     <name>BitMarket servlet container</name>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bitmarket</groupId>
     <artifactId>servlet-container</artifactId>
-    <version>1.0</version>
+    <version>${project.version}</version>
     <packaging>pom</packaging>
 
     <dependencies>
