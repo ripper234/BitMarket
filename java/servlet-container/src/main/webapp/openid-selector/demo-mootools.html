@@ -1,13 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>JQuery Simple OpenID Selector Demo</title>
+	<title>Mootools Simple OpenID Selector Demo</title>
 	<!-- Simple OpenID Selector -->
 	<link type="text/css" rel="stylesheet" href="css/openid.css" />
-	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="js/openid-jquery.js"></script>
+	<script type="text/javascript" src="js/mootools-core.js"></script>
+	<script type="text/javascript" src="js/mootools-more.js"></script>
+	<script type="text/javascript" src="js/openid-mootools.js"></script>
 	<script type="text/javascript" src="js/openid-en.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
+		window.addEvent('domready', function(){
 			openid.init('openid_identifier');
 			openid.setDemoMode(true); //Stops form submission for client javascript-only test purposes
 		});
@@ -22,12 +26,13 @@
 </head>
 
 <body>
-	<h2>JQuery Simple OpenID Selector Demo</h2>
+	<h2>Mootools Simple OpenID Selector Demo</h2>
 	<p>This is a simple example to show how you can include the Javascript into your page.</p>
 	<br/>
 	<!-- Simple OpenID Selector -->
 	<form action="examples/consumer/try_auth.php" method="get" id="openid_form">
 		<input type="hidden" name="action" value="verify" />
+		<input id="openid_form_submit" type="submit" style="display: none;" />
 		<fieldset>
 			<legend>Sign-in or Create New Account</legend>
 			<div id="openid_choice">
@@ -46,3 +51,4 @@
 	</form>
 	<!-- /Simple OpenID Selector -->
 </body>
+</html>
