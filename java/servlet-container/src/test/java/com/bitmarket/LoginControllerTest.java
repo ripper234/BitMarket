@@ -1,13 +1,14 @@
 package com.bitmarket;
 
+import com.bitmarket.controllers.LoginController;
 import org.springframework.web.servlet.ModelAndView;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class IndexControllerTest {
+public class LoginControllerTest {
     @Test
     public void testHandleRequestView() throws Exception {
-        IndexController controller = new IndexController();
+        LoginController controller = new LoginController();
         ModelAndView modelAndView = controller.handleRequest(null, null);
         Assert.assertEquals("index.jsp", modelAndView.getViewName());
     }
