@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/login/*")
 public class LoginController {
     // todo - get this via injection
     protected final Log logger = LogFactory.getLog(getClass());
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping("showProviders")
     public ModelAndView showProviders() {
         logger.info("Displaying login options");
         System.out.println("Displaying login options");
         return new ModelAndView("openid-selector/login-show-providers.jsp");
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "startLogin", method = RequestMethod.POST)
     public ModelAndView startLogin() {
         logger.info("Starting login process");
         System.out.println("Starting login process");

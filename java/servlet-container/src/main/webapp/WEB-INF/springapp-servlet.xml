@@ -11,5 +11,5 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
 
     <bean name="/index.jsp" class="com.bitmarket.controllers.IndexController"/>
-    <bean name="/login.do" class="com.bitmarket.controllers.LoginController"/>
+    <bean name="/login/*" class="com.bitmarket.controllers.LoginController"/>
 </beans>
