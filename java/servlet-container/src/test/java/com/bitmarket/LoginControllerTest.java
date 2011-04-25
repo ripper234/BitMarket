@@ -10,6 +10,6 @@ public class LoginControllerTest {
     public void testHandleRequestView() throws Exception {
         LoginController controller = new LoginController();
         ModelAndView modelAndView = controller.handleRequest(null, null);
-        Assert.assertEquals("index.jsp", modelAndView.getViewName());
+        Assert.assertEquals("login.jsp", modelAndView.getViewName());
     }
 }
