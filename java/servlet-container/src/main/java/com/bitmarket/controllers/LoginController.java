@@ -5,24 +5,29 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class LoginController implements Controller {
+@Controller
+@RequestMapping(value = "/login")
+public class LoginController {
     // todo - get this via injection
     protected final Log logger = LogFactory.getLog(getClass());
 
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        logger.info("Handling request");
-        System.out.println("stdout - Returning hello view");
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView showProviders() {
+        logger.info("Displaying login options");
+        System.out.println("Displaying login options");
+        return new ModelAndView("openid-selector/login-show-providers.jsp");
+    }
 
-
-        springExample();
-
-        return new ModelAndView("login.jsp");
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView startLogin() {
+        logger.info("Starting login process");
+        System.out.println("Starting login process");
+        return new ModelAndView("login-with-provider.jsp");
     }
 
     private void springExample() {

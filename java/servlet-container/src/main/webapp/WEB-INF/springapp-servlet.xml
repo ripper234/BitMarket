@@ -7,7 +7,9 @@
         http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <!-- the application context definition for the springapp DispatcherServlet -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
     <bean name="/index.jsp" class="com.bitmarket.controllers.IndexController"/>
-    <bean name="/login.jsp" class="com.bitmarket.controllers.LoginController"/>
-    <bean id="loginService" class="com.bitmarket."
+    <bean name="/login.do" class="com.bitmarket.controllers.LoginController"/>
 </beans>

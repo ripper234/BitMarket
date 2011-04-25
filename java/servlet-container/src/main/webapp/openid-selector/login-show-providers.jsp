@@ -2,10 +2,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>JQuery Simple OpenID Selector Demo</title>
 	<!-- Simple OpenID Selector -->
-	<link type="text/css" rel="stylesheet" href="css/openid.css" />
-	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="js/openid-jquery.js"></script>
-	<script type="text/javascript" src="js/openid-en.js"></script>
+	<link type="text/css" rel="stylesheet" href="openid-selector/css/openid.css" />
+	<script type="text/javascript" src="openid-selector/js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="openid-selector/js/openid-jquery.js"></script>
+	<script type="text/javascript" src="openid-selector/js/openid-en.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			openid.init('openid_identifier');
@@ -22,10 +22,10 @@
 </head>
 
 <body>
-	<h2>JQuery Simple OpenID Selector Demo</h2>
-	<p>This is a simple example to show how you can include the Javascript into your page.</p>
+	<h2>Login using OpenID</h2>
+
 	<br/>
-	<!-- Simple OpenID Selector -->
+
 	<form action="examples/consumer/try_auth.php" method="get" id="openid_form">
 		<input type="hidden" name="action" value="verify" />
 		<fieldset>
@@ -44,5 +44,4 @@
 			</noscript>
 		</fieldset>
 	</form>
-	<!-- /Simple OpenID Selector -->
 </body>
