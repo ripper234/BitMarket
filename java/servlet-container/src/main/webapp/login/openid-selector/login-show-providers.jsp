@@ -9,7 +9,6 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			openid.init('openid_identifier');
-			openid.setDemoMode(true); //Stops form submission for client javascript-only test purposes
 		});
 	</script>
 	<!-- /Simple OpenID Selector -->
@@ -26,7 +25,7 @@
 
 	<br/>
 
-	<form action="examples/consumer/try_auth.php" method="get" id="openid_form">
+	<form action="startLogin.do" method="post" id="openid_form">
 		<input type="hidden" name="action" value="verify" />
 		<fieldset>
 			<legend>Sign-in or Create New Account</legend>

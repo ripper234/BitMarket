@@ -24,10 +24,10 @@ public class LoginController {
     }
 
     @RequestMapping(value = "startLogin", method = RequestMethod.POST)
-    public ModelAndView startLogin() {
-        logger.info("Starting login process");
+    public ModelAndView startLogin(String openid_identifier) {
+        logger.info(String.format("Starting login process with openID '%s'", openid_identifier));
         System.out.println("Starting login process");
-        return new ModelAndView("login-with-provider.jsp");
+        return new ModelAndView("login-with-provider.jsp", "openid", openid_identifier);
     }
 
     private void springExample() {
