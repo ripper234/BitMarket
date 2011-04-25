@@ -46,24 +46,46 @@
             <artifactId>hibernate-validator</artifactId>
             <version>3.1.0.GA</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.openid4java</groupId>
+            <artifactId>openid4java</artifactId>
+            <version>0.9.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <!--<plugin>-->
-            <!--<groupId>org.codehaus.cargo</groupId>-->
-            <!--<artifactId>cargo-maven2-plugin</artifactId>-->
-            <!--<version>1.0.6</version>-->
-            <!--</plugin>-->
-
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
                 <configuration>
-                    <failOnMissingWebXml>true</failOnMissingWebXml>
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <daemon>true</daemon>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 

@@ -20,10 +20,14 @@ public class LoginController implements Controller {
         System.out.println("stdout - Returning hello view");
 
 
+        springExample();
 
+        return new ModelAndView("login.jsp");
+    }
+
+    private void springExample() {
         XmlBeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("services.xml"));
         LoginService service = (LoginService) beanFactory.getBean("LoginServiceBean");
         service.login("fo", "ao");
-        return new ModelAndView("login.jsp");
     }
 }
