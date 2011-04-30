@@ -1,6 +1,9 @@
 package com.bitmarket.controllers;
 
+import com.bitmarket.model.User;
 import com.bitmarket.services.LoginService;
+import com.bitmarket.services.dal.FakeUserRepository;
+import com.bitmarket.services.dal.UserRepository;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
     // todo - get this via injection
     protected final Log logger = LogFactory.getLog(getClass());
+    private final UserRepository fakeUserRepository = new FakeUserRepository();
 
     @RequestMapping("showProviders")
     public ModelAndView showProviders() {
@@ -28,6 +32,17 @@ public class LoginController {
         logger.info(String.format("Starting login process with openID '%s'", openid_identifier));
         System.out.println("Starting login process");
         return new ModelAndView("login-with-provider.jsp", "openid", openid_identifier);
+    }
+
+    @RequestMapping(value = "cheatLogin")
+    public ModelAndView cheatLogin(long userId) {
+        User user = fakeUserRepository.read(userId);
+        return successfulLogin(user);
+    }
+
+    private ModelAndView successfulLogin(User user) {
+        // todo - set cookie
+        return new ModelAndView("successful-login.jsp", "user", user);
     }
 
     private void springExample() {
