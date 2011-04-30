@@ -1,6 +1,7 @@
 <%@ page import="org.springframework.ui.Model" %>
-<%@ page import="com.bitmarket.model.TmpModelResolverCrap" %>
+<%@ page import="com.bitmarket.model.TmpStaticModel" %>
 <%@ page import="com.bitmarket.model.User" %>
+<%@ page import="com.bitmarket.model.TmpStaticModel" %>
 <%--
   Created by IntelliJ IDEA.
   User: rgross
@@ -10,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head><title>Simple jsp page</title></head>
-<body>Welcome <%= ((User)com.bitmarket.model.TmpModelResolverCrap.readModel()).getName() %>, you have
-<%= ((User)com.bitmarket.model.TmpModelResolverCrap.readModel()).getBalance()%> bitcoins.
+<body>Welcome &lt;%= ((User)com.bitmarket.model.TmpStaticModel, you have
+&lt;%= ((User)TmpStaticModel.readModel()).getBalance()%&gt; bitcoins.
 </body>
 </html>

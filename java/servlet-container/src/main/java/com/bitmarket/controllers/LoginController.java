@@ -1,10 +1,10 @@
 package com.bitmarket.controllers;
 
 import com.bitmarket.model.ModelWithUser;
-import com.bitmarket.model.TmpModelResolverCrap;
+import com.bitmarket.model.TmpStaticModel;
 import com.bitmarket.model.User;
 import com.bitmarket.services.LoginService;
-import com.bitmarket.services.dal.FakeUserRepository;
+import com.bitmarket.services.dal.MockUserRepository;
 import com.bitmarket.services.dal.UserRepository;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.RedirectView;
 public class LoginController {
     // todo - get this via injection
     protected final Log logger = LogFactory.getLog(getClass());
-    private final UserRepository fakeUserRepository = new FakeUserRepository();
+    private final UserRepository userRepository = new MockUserRepository();
 
     @RequestMapping("showProviders")
     public ModelAndView showProviders() {
@@ -39,7 +39,7 @@ public class LoginController {
 
     @RequestMapping(value = "cheatLogin")
     public Object cheatLogin(long userId) {
-        User user = fakeUserRepository.read(userId);
+        User user = userRepository.read(userId);
         return successfulLogin(user);
     }
 
@@ -50,7 +50,7 @@ public class LoginController {
 
     @RequestMapping(value = "logout", method = RequestMethod.POST)
     public RedirectView logout() {
-        TmpModelResolverCrap.saveModel(null);
+        TmpStaticModel.saveModel("user", null);
         return new RedirectView("../");
     }
 
@@ -58,12 +58,12 @@ public class LoginController {
         // todo - set cookie
 
         // todo  remove this crap
-        TmpModelResolverCrap.saveModel(new ModelWithUser(user));
+        TmpStaticModel.saveModel("user", new ModelWithUser(user));
 
         // todo - support returnUrl
         // todo - do an actual redirect to / (by returning RedirectView)
 
-        // return new ModelAndView("../index.jsp", "user", user);
+        // return new ModelAndView("../show.jsp", "user", user);
         return new RedirectView("../");
     }
 

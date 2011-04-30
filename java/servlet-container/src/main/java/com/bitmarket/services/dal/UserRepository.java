@@ -1,5 +1,6 @@
 package com.bitmarket.services.dal;
 
+import com.bitmarket.model.Job;
 import com.bitmarket.model.User;
 
 /**
@@ -8,7 +9,6 @@ import com.bitmarket.model.User;
  * Date: 4/30/11
  * Time: 2:34 PM
  */
-public interface UserRepository {
-    User read(long id);
+public interface UserRepository extends Repository<User>{
 }
 

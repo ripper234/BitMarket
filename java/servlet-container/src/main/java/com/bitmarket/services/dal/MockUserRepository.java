@@ -4,8 +4,7 @@ import com.bitmarket.model.User;
 
 import java.math.BigDecimal;
 
-public class FakeUserRepository implements UserRepository{
-
+public class MockUserRepository implements UserRepository{
     @Override
     public User read(long id) {
         if (id == 1)
@@ -29,3 +28,4 @@ public class FakeUserRepository implements UserRepository{
         return user;
     }
 }
+
