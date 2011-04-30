@@ -1,5 +1,6 @@
 package com.bitmarket.controllers;
 
+import com.bitmarket.model.ModelWithUser;
 import com.bitmarket.model.TmpModelResolverCrap;
 import com.bitmarket.model.User;
 import com.bitmarket.services.LoginService;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @RequestMapping(value = "/login/*")
@@ -36,18 +38,33 @@ public class LoginController {
     }
 
     @RequestMapping(value = "cheatLogin")
-    public ModelAndView cheatLogin(long userId) {
+    public Object cheatLogin(long userId) {
         User user = fakeUserRepository.read(userId);
         return successfulLogin(user);
     }
 
-    private ModelAndView successfulLogin(User user) {
+    @RequestMapping(value = "showLogoutForm")
+    public ModelAndView showLogoutForm() {
+        return new ModelAndView("show-logout-form.jsp");
+    }
+
+    @RequestMapping(value = "logout", method = RequestMethod.POST)
+    public RedirectView logout() {
+        TmpModelResolverCrap.saveModel(null);
+        return new RedirectView("../");
+    }
+
+    private RedirectView successfulLogin(User user) {
         // todo - set cookie
 
         // todo  remove this crap
-        TmpModelResolverCrap.saveModel(user);
+        TmpModelResolverCrap.saveModel(new ModelWithUser(user));
 
-        return new ModelAndView("successful-login.jsp", "user", user);
+        // todo - support returnUrl
+        // todo - do an actual redirect to / (by returning RedirectView)
+
+        // return new ModelAndView("../index.jsp", "user", user);
+        return new RedirectView("../");
     }
 
     private void springExample() {
