@@ -12,7 +12,7 @@ public class Job extends Identifiable{
     }
 
     public void setTitle(String title) {
-        if (title == null)
+        if (title == null   )
             throw new IllegalArgumentException("title");
         int maxLength = 100;
         if (title.length() > maxLength)

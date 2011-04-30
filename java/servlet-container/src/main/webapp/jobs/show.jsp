@@ -14,6 +14,10 @@
     <link rel="stylesheet" target="css/main.css"/>
 
     <style type="text/css">
+        h2 {
+            font-size: 120%;
+        }
+
         div#header {
             width: 100%;
         }
@@ -24,23 +28,29 @@
             border: solid 1px;
         }
 
-        div#main {
-            width: 80%;
-            border: solid 1px;
-            display: inline;
+        div#jobs {
+            width: 60%;
+            border: solid 2px;
         }
 
         div#sidebar {
-            width: 20%;
+            width: 10%;
             border: solid 1px;
             background-color: red;
-            display: inline;
-
         }
 
         .job {
+            height: 12em;
+        }
+
+        .text {
             border: solid 1px;
-            height: 10em;
+            width: 50%;
+        }
+
+        .price {
+        /*color:#daa520;*/
+            color: #ff8c00;
         }
     </style>
 
@@ -54,38 +64,45 @@
     %>
 
     <% if (user == null) { %>
-    <p>Click <a href="login/showProviders.do">here</a> to login with OpenID.
+    <p>Click <a href="../login/showProviders.do">here</a> to login with OpenID.
 
-    <p>Until this is actually implemented, just click <a href="login/cheatLogin.do?userId=1">Ron</a> or
-        <a href="login/cheatLogin.do?userId=2">Yair</a> to do a cheat-login</p>
+        Until this is actually implemented, just click <a href="../login/cheatLogin.do?userId=1">Ron</a> or
+        <a href="../login/cheatLogin.do?userId=2">Yair</a> to do a cheat-login</p>
 
     <% } else { %>
     Welcome <%= user.getName() %>, you have <%= user.getBalance()%> bitcoins.
 
-    <a href="login/showLogoutForm.do">logout</a>
+    <a href="../login/showLogoutForm.do">logout</a>
     <% } %>
 </div>
 <div id="body">
     <div id="navbar">
-        <form>
-            <button id="sortHighest">Highest</button>
-            <button id="sortNewest">Newest</button>
-            <button id="sortActivity">Most Activity</button>
-        </form>
+        <button id="sortHighest">Highest</button>
+        <button id="sortNewest">Newest</button>
+        <button id="sortActivity">Most Activity</button>
     </div>
-    <div id="main">Main</div>
+    <div id="main">
+        <div id="jobs">
+            <%
+                /* todo - color every other line in a different color */
+                for (Job job : jobs) { %>
+            <div class="job">
+                <div class="text">
+                    <h2><%= job.getTitle() %>
+                    </h2>
 
-    <%
-        /* todo - color every other line in a different color */
+                    <p><%= job.getBody()%>
+                    </p>
+                </div>
+                <div class="price">Price: <%= PriceRenderer.renderPrice(job.getPrice()) %>
+                </div>
 
-        for (Job job : jobs) { %>
-    <div class="job">
-        <div class="title"><%= job.getTitle() %></div>
-        <div class="price"><%= PriceRenderer.renderPrice(job.getPrice()) %></div>
+                <button class="claim">Claim this job</button>
+            </div>
+            <% } %>
+        </div>
+        <div id="sidebar">Side</div>
     </div>
-    <% } %>
-
-    <div id="sidebar">Side</div>
 </div>
 </body>
 </html>

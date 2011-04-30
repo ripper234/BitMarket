@@ -1,6 +1,5 @@
 package com.bitmarket.controllers;
 
-import com.bitmarket.model.ModelWithUser;
 import com.bitmarket.model.TmpStaticModel;
 import com.bitmarket.model.User;
 import com.bitmarket.services.LoginService;
@@ -58,7 +57,7 @@ public class LoginController {
         // todo - set cookie
 
         // todo  remove this crap
-        TmpStaticModel.saveModel("user", new ModelWithUser(user));
+        TmpStaticModel.saveModel("user", user);
 
         // todo - support returnUrl
         // todo - do an actual redirect to / (by returning RedirectView)
