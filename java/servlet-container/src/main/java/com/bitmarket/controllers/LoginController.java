@@ -1,5 +1,6 @@
 package com.bitmarket.controllers;
 
+import com.bitmarket.model.TmpModelResolverCrap;
 import com.bitmarket.model.User;
 import com.bitmarket.services.LoginService;
 import com.bitmarket.services.dal.FakeUserRepository;
@@ -42,6 +43,10 @@ public class LoginController {
 
     private ModelAndView successfulLogin(User user) {
         // todo - set cookie
+
+        // todo  remove this crap
+        TmpModelResolverCrap.saveModel(user);
+
         return new ModelAndView("successful-login.jsp", "user", user);
     }
 
