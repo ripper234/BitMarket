@@ -14,6 +14,6 @@ goto end
 :usage
 echo Usage: install-jar FILE GROUP_ID ARTIFACT_ID VERSION
 echo.
-echo Group should be "com.mashlife.external...."
+echo Group should be "com.bitmarket.external...."
 
 :end
