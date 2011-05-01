@@ -9,12 +9,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
-<head><title>Simple jsp page</title></head>
+<head>
+    <title>Simple jsp page</title>
+    <style type="text/css">
+        th {
+            background-color:#90ee90;
+        }
+        table {
+            border:solid 1px;
+        }
+        table td {
+            border-top:dashed 1px;
+            border-top:dashed 1px;
+        }
+    </style>
+</head>
 <body>
 <% User viewedUser = TmpStaticModel.readModel("viewedUser");
     List<Job> jobs = TmpStaticModel.readModel("viewedUserPostedJobs");
 %>
-<h1>User <%= viewedUser.getName() %>
+<h1><%= viewedUser.getName() %>
 </h1>
 
 <h2>Member since: <%= DateRenderer.render(viewedUser.getRegistrationDate()) %>
@@ -29,17 +43,21 @@
     This user has no posted jobs
     <% } else { %>
 
-    <% for (Job job : jobs) { %>
-    <div class="job-short">
-        <p>Posted on <%= job.getPostedDate() %>,
-            <%= DateRenderer.renderExpiresExpired(job.getExpiryDate()) %>
-            on <%= DateRenderer.render(job.getExpiryDate())%>
-        </p>
 
-        <h3><%= LinkRenderer.render(job.getTitle(), JobRenderer.linkify(job.getId(), "../")) %>
-        </h3>
-    </div>
-    <% } %>
+    <table>
+        <tr>
+            <th>Posted</th>
+            <th>Expires</th>
+            <th>Title</th>
+        </tr>
+        <% for (Job job : jobs) { %>
+        <tr>
+            <td><%= DateRenderer.render(job.getPostedDate()) %></td>
+            <td><%= DateRenderer.render(job.getExpiryDate()) %></td>
+            <td><%= LinkRenderer.render(job.getTitle(), JobRenderer.linkify(job.getId(), "../")) %></td>
+        </tr>
+        <% } %>
+    </table>
     <% } %>
 </div>
 </body>
