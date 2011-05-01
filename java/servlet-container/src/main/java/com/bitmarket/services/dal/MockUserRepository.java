@@ -3,6 +3,7 @@ package com.bitmarket.services.dal;
 import com.bitmarket.model.User;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class MockUserRepository implements UserRepository{
     @Override
@@ -25,6 +26,7 @@ public class MockUserRepository implements UserRepository{
         user.setId(id);
         user.setName(name);
         user.setBalance(balance);
+        user.setRegistrationDate(new Date());
         return user;
     }
 }

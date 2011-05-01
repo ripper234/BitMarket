@@ -1,15 +1,9 @@
 package com.bitmarket.model;
 
-import org.springframework.web.servlet.ModelAndView;
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * User: rgross
- * Date: 4/30/11
- * Time: 2:54 PM
  */
 @Deprecated
 public class TmpStaticModel {
@@ -19,5 +13,11 @@ public class TmpStaticModel {
     }
     public static <T> T readModel(String key) {
         return (T)modelMap.get(key);
+    }
+
+    public static void saveModel(Map<String, Object> model) {
+        for (Map.Entry<String, Object> entry : model.entrySet()) {
+            modelMap.put(entry.getKey(), entry.getValue());
+        }
     }
 }

@@ -1,12 +1,18 @@
 package com.bitmarket.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Job extends Identifiable{
     private String title;
     private String body;
     private BigDecimal price;
     private User poster;
+    private Date postedDate;
+    private Date expiryDate;
+
+    public Job() {
+    }
 
     public String getTitle() {
         return title;
@@ -44,5 +50,21 @@ public class Job extends Identifiable{
 
     public void setPoster(User poster) {
         this.poster = poster;
+    }
+
+    public Date getPostedDate() {
+        return postedDate;
+    }
+
+    public void setPostedDate(Date postedDate) {
+        this.postedDate = postedDate;
+    }
+
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(Date expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }

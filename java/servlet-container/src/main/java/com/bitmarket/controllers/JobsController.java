@@ -19,8 +19,8 @@ public class JobsController {
     protected final Log logger = LogFactory.getLog(getClass());
     private final JobRepository jobsRepo = new MockJobRepository();
 
-    @RequestMapping(value = "show")
-    public ModelAndView handleRequest() throws Exception {
+    @RequestMapping(value = "showJobs")
+    public ModelAndView showJobs() throws Exception {
         logger.info("Handling request");
         System.out.println("stdout - Returning hello view");
 
@@ -28,7 +28,7 @@ public class JobsController {
         TmpStaticModel.saveModel("jobs", jobs);
 
         // todo - filter jobs
-        return new ModelAndView("show.jsp", "jobs", jobs);
+        return new ModelAndView("showJobs.jsp", "jobs", jobs);
     }
 }
 

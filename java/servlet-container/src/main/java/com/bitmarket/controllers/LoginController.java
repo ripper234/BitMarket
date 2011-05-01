@@ -33,7 +33,7 @@ public class LoginController {
     public ModelAndView startLogin(String openid_identifier) {
         logger.info(String.format("Starting login process with openID '%s'", openid_identifier));
         System.out.println("Starting login process");
-        return new ModelAndView("login-with-provider.jsp", "openid", openid_identifier);
+        return new ModelAndView("loginWithProvider.jsp", "openid", openid_identifier);
     }
 
     @RequestMapping(value = "cheatLogin")
@@ -44,7 +44,7 @@ public class LoginController {
 
     @RequestMapping(value = "showLogoutForm")
     public ModelAndView showLogoutForm() {
-        return new ModelAndView("show-logout-form.jsp");
+        return new ModelAndView("showLogoutForm.jsp");
     }
 
     @RequestMapping(value = "logout", method = RequestMethod.POST)
@@ -62,7 +62,7 @@ public class LoginController {
         // todo - support returnUrl
         // todo - do an actual redirect to / (by returning RedirectView)
 
-        // return new ModelAndView("../show.jsp", "user", user);
+        // return new ModelAndView("../showJobs.jsp", "user", user);
         return new RedirectView("../");
     }
 

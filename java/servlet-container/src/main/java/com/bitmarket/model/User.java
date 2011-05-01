@@ -5,11 +5,18 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Embeddable
 public class User extends Identifiable{
     private String name;
     private BigDecimal balance;
+    private Date registrationDate;
+
+    /**
+     * Number of transactions this user successfully complete
+     */
+    private int completedTx;
 
 
     public String getName() {
@@ -26,6 +33,22 @@ public class User extends Identifiable{
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public int getCompletedTx() {
+        return completedTx;
+    }
+
+    public void setCompletedTx(int completedTx) {
+        this.completedTx = completedTx;
     }
 }
 
