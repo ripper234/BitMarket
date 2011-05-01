@@ -6,6 +6,7 @@ public class Job extends Identifiable{
     private String title;
     private String body;
     private BigDecimal price;
+    private User poster;
 
     public String getTitle() {
         return title;
@@ -35,5 +36,13 @@ public class Job extends Identifiable{
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public User getPoster() {
+        return poster;
+    }
+
+    public void setPoster(User poster) {
+        this.poster = poster;
     }
 }

@@ -1,6 +1,7 @@
 <%@ page import="com.bitmarket.model.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.bitmarket.rendering.PriceRenderer" %>
+<%@ page import="com.bitmarket.rendering.UserRenderer" %>
 <%--
   Created by IntelliJ IDEA.
   User: rgross
@@ -16,6 +17,10 @@
     <style type="text/css">
         h2 {
             font-size: 120%;
+        }
+
+        .hidden {
+            display:none;
         }
 
         div#header {
@@ -87,6 +92,8 @@
                 /* todo - color every other line in a different color */
                 for (Job job : jobs) { %>
             <div class="job">
+                <p class="poster">By
+                <%= UserRenderer.render(job.getPoster(), "../") %></p>
                 <div class="text">
                     <h2><%= job.getTitle() %>
                     </h2>
@@ -94,6 +101,7 @@
                     <p><%= job.getBody()%>
                     </p>
                 </div>
+                <p class="hidden"><%= job.getId()%></p>
                 <div class="price">Price: <%= PriceRenderer.renderPrice(job.getPrice()) %>
                 </div>
 

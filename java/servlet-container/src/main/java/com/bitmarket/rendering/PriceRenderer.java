@@ -10,3 +10,4 @@ public class PriceRenderer {
         return price.toString() + " BTC";
     }
 }
+
