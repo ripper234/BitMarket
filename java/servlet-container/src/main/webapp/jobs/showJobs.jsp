@@ -3,14 +3,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:main>
+    <jsp:attribute name="head">
+        <link rel="stylesheet" type="text/css" href="/css/jobs.css"/>
+    </jsp:attribute>
     <jsp:body>
         <div id="sortBar">
             <button id="sortHighest">Highest</button>
             <button id="sortNewest">Newest</button>
             <button id="sortActivity">Most Activity</button>
         </div>
-        <div id="main">
-            <div id="jobs">
+        <div id="jobs">
                 <c:forEach var="job" items="${jobs}">
                     <%-- todo - color every other line in a different color --%>
                     <div class="job">
@@ -34,6 +36,5 @@
                     </div>
                 </c:forEach>
             </div>
-        </div>
     </jsp:body>
 </t:main>

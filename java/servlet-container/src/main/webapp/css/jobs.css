@@ -1,0 +1,56 @@
+#jobs {
+    border: solid 1px;
+    float: left;
+    width: 100%;
+}
+
+.job {
+    margin: 1em;
+    margin-bottom: 1em;
+    display: block;
+    overflow: hidden;
+}
+
+.job .poster {
+    float: left;
+    margin: 0;
+    margin-right: 1em;
+    width: 100px;
+    display: inline;
+    background: #FFFCC9;
+    border: 1px solid;
+}
+
+.job .poster p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.job .details {
+    float: left;
+    background: lightgray;
+    display: inline;
+}
+
+.job .text {
+    border: solid 1px;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    width: 400px;
+}
+
+.job .text p {
+    /* TODO - Disable underline */
+}
+
+.price {
+    /*co    lor:#daa520;*/
+    color: #ff8c00;
+    display: inline;
+}
+
+img.avatar {
+    width: 100px;
+    height: 100px;
+}
