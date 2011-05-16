@@ -62,8 +62,13 @@
             background: red;
             margin: 0;
             margin-right: 1em;
-            width: 120px;
+            width: 100px;
             display: inline;
+        }
+        .job .poster p {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            text-align: center;
         }
 
         .job .details {
