@@ -12,6 +12,8 @@ public class User extends Identifiable{
     private String name;
     private BigDecimal balance;
     private Date registrationDate;
+    private String avatarUrl;
+    private int grade;
 
     /**
      * Number of transactions this user successfully complete
@@ -49,6 +51,22 @@ public class User extends Identifiable{
 
     public void setCompletedTx(int completedTx) {
         this.completedTx = completedTx;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 }
 

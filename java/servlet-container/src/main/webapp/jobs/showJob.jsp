@@ -99,10 +99,8 @@
 </head>
 <body>
 <div id="header">
-    <h1>Welcome to BitMarket</h1>
-
-    <% List<Job> jobs = TmpStaticModel.readModel("jobs");
-        User user = TmpStaticModel.readModel("user");
+    <% Job job = TmpStaticModel.readModel("job");
+       User user = TmpStaticModel.readModel("user");
     %>
 
     <% if (user == null) { %>
@@ -124,10 +122,7 @@
         <button id="sortActivity">Most Activity</button>
     </div>
     <div id="main">
-        <div id="jobs">
-            <%
-                /* todo - color every other line in a different color */
-                for (Job job : jobs) { %>
+        <div id="job">
             <div class="job">
                 <p class="poster">
                     <%= UserRenderer.render(job.getPoster(), "../") %>
@@ -150,7 +145,6 @@
                 </div>
 
             </div>
-            <% } %>
         </div>
         <div id="sidebar">
             <h2>Hot Tags</h2>

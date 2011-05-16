@@ -9,7 +9,9 @@ public class UserRenderer {
         return LinkRenderer.render(user.getName(), getLinkToUser(user.getId(), prefix));
     }
 
-    private static String getLinkToUser(long id, String prefix) {
+    public static String getLinkToUser(long id, String prefix) {
         return prefix + "user/showUser.do?userId=" + id;
     }
 }
+
+

@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface JobRepository extends Repository<Job> {
 
-    List<Job> readAll();
 }

@@ -30,5 +30,12 @@ public class JobsController {
         // todo - filter jobs
         return new ModelAndView("showJobs.jsp", "jobs", jobs);
     }
+
+    @RequestMapping(value = "showJob")
+    public ModelAndView showJob(long jobId) throws Exception {
+        Job job = jobsRepo.read(jobId);
+        TmpStaticModel.saveModel("job", job);
+        return new ModelAndView("showJob.jsp", "job", job);
+    }
 }
 
