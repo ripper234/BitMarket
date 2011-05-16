@@ -94,6 +94,15 @@
             width: 100px;
             height: 100px;
         }
+
+
+
+
+
+        /** Specific to showjob.jsp page !!! */
+        button.claim {
+            font-weight:bold;
+        }
     </style>
 
 </head>
@@ -142,6 +151,7 @@
 
                     <div class="price">Price: <%= PriceRenderer.renderPrice(job.getPrice()) %>
                     </div>
+                    <button class="claim">Claim job!</button>
                 </div>
 
             </div>
