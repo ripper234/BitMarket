@@ -14,9 +14,9 @@
                 <c:forEach var="job" items="${jobs}">
                     <%-- todo - color every other line in a different color --%>
                     <div class="job">
-                        <p class="poster">
+                        <div class="poster">
                             <t:user user="${job.poster}"/>
-                        </p>
+                        </div>
 
                         <div class="details">
                             <div class="text">

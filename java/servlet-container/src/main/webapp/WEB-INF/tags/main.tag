@@ -43,5 +43,8 @@
         <span class="tag">Quora</span>
     </div>
 </div>
+<div id="footer">
+    Copyright bla bla bla ... footer.
+</div>
 </body>
 </html>
