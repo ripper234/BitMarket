@@ -32,18 +32,12 @@
                     <%-- todo - color every other line in a different color --%>
                 <div class="job">
                     <p class="poster">
-                        <!-- TODO reuse - http://stackoverflow.com/questions/6071614/how-can-i-reuse-code-in-jslt-el -->
-                        <a href="../user/showUser.do?userId=${job.poster.id}">
-                            ${job.poster.name}
-                            <img class='avatar' src='${job.poster.avatarUrl}' alt=""/>
-                        </a>
+                        <t:user user="${job.poster}"/>
                     </p>
-
                     <div class="details">
                         <div class="text">
-
-                            <t:user user="${job.poster}"/>
-
+                            <h3>${job.title}</h3>
+                            <p>${job.body}</p>
                         </div>
                         <div class="price">
                             Price: ${job.price} BTC
