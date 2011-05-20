@@ -36,7 +36,9 @@
                     </p>
                     <div class="details">
                         <div class="text">
-                            <h3>${job.title}</h3>
+                            <h3>
+                                <a href="/jobs/showJob.do?jobId=${job.id}">${job.title}</a>
+                            </h3>
                             <p>${job.body}</p>
                         </div>
                         <div class="price">
