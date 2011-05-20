@@ -7,12 +7,12 @@ import javax.persistence.*;
 @SuppressWarnings({"UnusedDeclaration"})
 @MappedSuperclass
 public class Identifiable {
-    private Long id;
+    private long id;
 
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
