@@ -1,4 +1,4 @@
-h2 {
+        h2 {
             font-size: 120%;
         }
 
@@ -27,10 +27,16 @@ h2 {
             float: left;
         }
 
+        div#body {
+            width:60%;
+            float: left;
+            background: blue;
+        }
         div#sidebar {
             width: 30%;
             border: solid 1px;
-            float: left;
+            float:left;
+            background: red;
         }
 
         .job {

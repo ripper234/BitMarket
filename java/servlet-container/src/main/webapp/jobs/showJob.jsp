@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="job" scope="request" type="com.bitmarket.model.Job"/>
 
 <t:main>
     <jsp:attribute name="head">
@@ -10,6 +11,7 @@
         </style>
     </jsp:attribute>
     <jsp:body>
+
         <div id="job">
                 <div class="poster">
                    <t:user user="${job.poster}"/>
