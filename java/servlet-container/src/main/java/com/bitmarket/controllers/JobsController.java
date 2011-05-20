@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
+
+import static com.google.common.collect.Maps.newHashMap;
 
 @Controller
 @RequestMapping(value = "/jobs/*")
@@ -24,11 +27,13 @@ public class JobsController {
         logger.info("Handling request");
         System.out.println("stdout - Returning hello view");
 
+        // todo - filter the jobs
         List<Job> jobs = jobsRepo.readAll();
-        TmpStaticModel.saveModel("jobs", jobs);
 
-        // todo - filter jobs
-        return new ModelAndView("showJobs.jsp", "jobs", jobs);
+        Map<String, Object> map = newHashMap();
+        map.put("jobs", jobs);
+        map.put("user", null); // todo
+        return new ModelAndView("showJobs.jsp", map);
     }
 
     @RequestMapping(value = "showJob")

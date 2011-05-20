@@ -33,6 +33,11 @@ public class Job extends Identifiable{
     }
 
     public void setPrice(BigDecimal price) {
+        final int allowedDecimalDigits = 2;
+        if (price.scale() > allowedDecimalDigits)
+            throw new IllegalArgumentException(
+                    String.format("All prices should have no more than %d digits after the decimal point, got %s",
+                            allowedDecimalDigits, price));
         this.price = price;
     }
 
