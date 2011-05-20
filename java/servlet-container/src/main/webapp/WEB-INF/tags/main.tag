@@ -1,4 +1,4 @@
-<%@tag description="Simple Wrapper Tag" pageEncoding="UTF-8" %>
+<%@tag description="Main tag" pageEncoding="UTF-8" %>
 <%@attribute name="head" fragment="true" %>
 <html>
 <head>

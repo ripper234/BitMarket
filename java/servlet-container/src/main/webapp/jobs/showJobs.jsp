@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:main>
     <div id="header">
@@ -41,10 +41,9 @@
 
                     <div class="details">
                         <div class="text">
-                            <a href="../jobs/showJob?jobId=${job.id}">
-                                <h2>${job.title}</h2>
-                                <p>${job.body}</p>
-                            </a>
+
+                            <t:user user="${job.poster}"/>
+
                         </div>
                         <div class="price">
                             Price: ${job.price} BTC
