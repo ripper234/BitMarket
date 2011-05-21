@@ -4,7 +4,7 @@
 
 <t:main>
     <jsp:body>
-        <div id="navbar">
+        <div id="sortBar">
             <button id="sortHighest">Highest</button>
             <button id="sortNewest">Newest</button>
             <button id="sortActivity">Most Activity</button>

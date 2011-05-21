@@ -2,7 +2,7 @@
 <%@attribute name="head" fragment="true" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="user" scope="request" class="com.bitmarket.model.User"/>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="/css/main.css"/>
     <jsp:invoke fragment="head"/>

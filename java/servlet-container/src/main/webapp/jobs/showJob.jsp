@@ -29,5 +29,11 @@
                     <button class="claim">Claim job!</button>
                 </div>
         </div>
+
+
+
+
+
+
     </jsp:body>
 </t:main>
