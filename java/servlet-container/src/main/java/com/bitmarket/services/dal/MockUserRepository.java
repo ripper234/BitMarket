@@ -33,7 +33,7 @@ public class MockUserRepository implements UserRepository{
         user.setName(name);
         user.setBalance(balance);
         user.setRegistrationDate(new Date());
-        user.setAvatarUrl("about:blank");
+        user.setAvatarUrl("http://parnicki.files.wordpress.com/2011/01/loremipsum-20090929-160935.jpg");
         return user;
     }
 }
