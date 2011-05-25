@@ -43,3 +43,23 @@ body {
     float: left;
 }
 
+img.avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.poster {
+    float: left;
+    margin: 0;
+    margin-right: 1em;
+    width: 100px;
+    display: inline;
+    background: #FFFCC9;
+    border: 1px solid;
+}
+
+.poster p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    text-align: center;
+}

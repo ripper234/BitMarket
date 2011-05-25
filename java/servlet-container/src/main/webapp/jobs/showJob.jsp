@@ -4,6 +4,8 @@
 
 <t:main>
     <jsp:attribute name="head">
+        <link rel="stylesheet" type="text/css" href="/css/jobs.css"/>
+
         <style type="text/css">
             button.claim {
                 font-weight: bold;
@@ -11,23 +13,22 @@
         </style>
     </jsp:attribute>
     <jsp:body>
+        <div class="job">
+            <div class="poster">
+               <t:user user="${job.poster}"/>
+            </div>
 
-        <div id="job">
-                <div class="poster">
-                   <t:user user="${job.poster}"/>
+            <div class="details">
+                <div class="text">
+                    <h2>
+                        <t:jobTitle job="${job}"/>
+                    </h2>
+                    <p>${job.body}</p>
                 </div>
-
-                <div class="details">
-                    <div class="text">
-                        <h2>
-                            <t:jobTitle job="${job}"/>
-                        </h2>
-                        <p>${job.body}</p>
-                    </div>
-                    <p class="hidden">${job.id}</p>
-                    <div class="price">Price: ${job.price} BTC</div>
-                    <button class="claim">Claim job!</button>
-                </div>
+                <p class="hidden">${job.id}</p>
+                <div class="price">Price: ${job.price} BTC</div>
+                <button class="claim">Claim job!</button>
+            </div>
         </div>
 
 
