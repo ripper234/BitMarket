@@ -47,6 +47,36 @@ public class MockJobRepository implements JobRepository {
     }
 
     @Override
+    public void save(Iterable<Job> element) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void update(Job element) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void updates(Iterable<Job> elements) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void delete(long id) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Job get(long id) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public Job read(long id) {
         if (id <= 0)
             throw new IllegalArgumentException("id should be positive");

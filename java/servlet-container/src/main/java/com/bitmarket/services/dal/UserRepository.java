@@ -1,15 +1,9 @@
 package com.bitmarket.services.dal;
 
-import com.bitmarket.model.Job;
 import com.bitmarket.model.User;
+import com.google.inject.ImplementedBy;
 
-/**
- * Created by IntelliJ IDEA.
- * User: rgross
- * Date: 4/30/11
- * Time: 2:34 PM
- */
-@Im
+@ImplementedBy(HibernateUserRepository.class)
 public interface UserRepository extends Repository<User>{
 }
 

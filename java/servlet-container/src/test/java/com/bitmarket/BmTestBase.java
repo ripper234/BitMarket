@@ -1,6 +1,6 @@
 package com.bitmarket;
 
-import com.bitmarket.bootstrap.StandardModule;
+import com.bitmarket.di.StandardModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;

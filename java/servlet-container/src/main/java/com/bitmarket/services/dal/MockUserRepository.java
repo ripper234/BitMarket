@@ -14,6 +14,36 @@ public class MockUserRepository implements UserRepository{
     }
 
     @Override
+    public void save(Iterable<User> element) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void update(User element) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void updates(Iterable<User> elements) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void delete(long id) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public User get(long id) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public User read(long id) {
         if (id == 1)
             return createUser(1, "Ron", new BigDecimal("5000.123"));
