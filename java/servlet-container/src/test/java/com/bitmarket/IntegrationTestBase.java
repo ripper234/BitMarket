@@ -1,6 +1,5 @@
-package com.bitmarket.persistence;
+package com.bitmarket;
 
-import com.bitmarket.BmTestBase;
 import org.testng.annotations.BeforeMethod;
 
 public class IntegrationTestBase extends BmTestBase{

@@ -16,21 +16,21 @@
     <packaging>pom</packaging>
 
     <repositories>
-		<repository>
-          <id>codehausSnapshots</id>
-          <name>Codehaus Snapshots</name>
-          <releases>
-            <enabled>false</enabled>
-            <updatePolicy>always</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-            <checksumPolicy>fail</checksumPolicy>
-          </snapshots>
-          <url>http://snapshots.maven.codehaus.org/maven2</url>
-          <layout>default</layout>
+        <repository>
+            <id>codehausSnapshots</id>
+            <name>Codehaus Snapshots</name>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+            <url>http://snapshots.maven.codehaus.org/maven2</url>
+            <layout>default</layout>
         </repository>
 
         <repository>
