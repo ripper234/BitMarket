@@ -1,12 +1,18 @@
 package com.bitmarket.services.dal;
 
 import com.bitmarket.model.User;
+import org.apache.commons.lang.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 public class MockUserRepository implements UserRepository{
+    @Override
+    public void save(User item) {
+        throw new NotImplementedException();
+    }
+
     @Override
     public User read(long id) {
         if (id == 1)

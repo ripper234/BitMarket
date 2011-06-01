@@ -17,6 +17,9 @@ public class UserRepositoryTests extends IntegrationTestBase {
     public void saveAndReadUser() {
         User user = new User();
         user.setName("John doe");
+        repository.save(user);
 
+        User saved = repository.read(user.getId());
+        assertEquals(saved.getName(), "John doe");
     }
 }

@@ -9,6 +9,7 @@ import com.bitmarket.model.User;
  * Date: 4/30/11
  * Time: 2:34 PM
  */
+@Im
 public interface UserRepository extends Repository<User>{
 }
 

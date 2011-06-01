@@ -2,6 +2,7 @@ package com.bitmarket.services.dal;
 
 import com.bitmarket.model.Job;
 import com.bitmarket.model.User;
+import org.apache.commons.lang.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -38,6 +39,11 @@ public class MockJobRepository implements JobRepository {
         jobs.add(createJob(4, userRepository.read(2), 100, "Buy me a Kindle and deliver it to my Israel address (Tel Aviv)", "Kindle 3 WiFi, should cost exactly $140 via Amazon. Please deliver to Tel Aviv, Ben Guryion Street"));
         jobs.add(createJob(3, userRepository.read(2), 0.12, "How do I redirect in SpringMVC?", "Please see the details on http://stackoverflow.com/q/12215/how-do-i-redirect-in-spring-mvc"));
         return jobs;
+    }
+
+    @Override
+    public void save(Job item) {
+        throw new NotImplementedException();
     }
 
     @Override
