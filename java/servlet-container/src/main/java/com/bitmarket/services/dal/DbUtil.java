@@ -1,6 +1,7 @@
 package com.bitmarket.services.dal;
 
 import com.bitmarket.di.slf4j.InjectLogger;
+import com.google.inject.Inject;
 import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -8,8 +9,6 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.totallycommon.util.Action1;
 import org.totallycommon.util.Func1;
-
-import javax.inject.Inject;
 
 public class DbUtil {
     private final SessionFactory sessionFactory;
