@@ -1,11 +1,11 @@
 package com.bitmarket.services.dal;
 
+import com.google.inject.Inject;
 import org.apache.commons.lang.NotImplementedException;
 import org.hibernate.Session;
 import org.totallycommon.util.Action1;
 import org.totallycommon.util.Func1;
 
-import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
 
